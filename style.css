@@ -1,0 +1,159 @@
+/* -------------------------------------
+   GLOBAL MAIN STYLES
+------------------------------------- */
+.main {
+  width: 100%;
+  height: 100%;
+  background: #000000;
+
+  /* CSS Variables for grid lines */
+  --gap: 5em;
+  --line: 1px;
+  --color: rgba(255, 255, 255, 0.2);
+
+  /* Grid background using linear gradients */
+  background-image: 
+    linear-gradient(
+      -90deg,
+      transparent calc(var(--gap) - var(--line)),
+      var(--color) calc(var(--gap) - var(--line) + 1px),
+      var(--color) var(--gap)
+    ),
+    linear-gradient(
+      0deg,
+      transparent calc(var(--gap) - var(--line)),
+      var(--color) calc(var(--gap) - var(--line) + 1px),
+      var(--color) var(--gap)
+    );
+
+  /* Set background grid spacing */
+  background-size: var(--gap) var(--gap);
+}
+
+
+/* -------------------------------------
+   NAVIGATION BAR STYLES
+------------------------------------- */
+.navBar {
+  display: flex;
+  align-items: center; /* Fix: changed from 'flex-centre' to 'center' */
+  justify-content: space-between;
+  padding: 10px;
+  font-family: "Roboto Slab", serif;
+}
+
+.navTitle {
+  color: aliceblue;
+  width: 50%;
+  margin: 0;
+}
+
+/* Navigation links container */
+.navLinks {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+/* Individual navigation items */
+.navLinks li {
+  display: inline;
+  margin-left: 20px;
+  font-size: 17px;
+}
+
+/* Navigation anchor styling */
+.navLinks a {
+  text-decoration: none;
+  color: rgb(83, 82, 79);
+  transition: color 0.3s ease;
+}
+
+.navLinks a:hover {
+  color: aliceblue;
+}
+
+/* Hamburger icon style */
+.hamburger {
+  display: none;
+  font-size: 30px;
+  color: aliceblue;
+  cursor: pointer;
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+  .navLinks {
+    display: none; /* Hide nav links */
+    flex-direction: column;
+    background-color: black;
+    position: absolute;
+    top: 60px; /* below navbar */
+    right: 10px;
+    width: 150px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    z-index: 999;
+  }
+
+  .navLinks li {
+    margin: 10px 0;
+  }
+
+  .hamburger {
+    display: block; /* Show hamburger icon */
+  }
+
+  .navBar {
+    flex-wrap: wrap;
+  }
+
+  .navLinks.show {
+    display: flex; /* Show menu when toggled */
+  }
+}
+
+
+
+/* -------------------------------------
+   SCROLLING TEXT BANNER STYLES
+------------------------------------- */
+.scroll-container {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  transform: translateY(-50%);
+}
+
+/* Wrapper for continuous scrolling */
+.scroll-text-wrapper {
+  display: inline-block;
+  white-space: nowrap;
+  animation: scroll-left 20s linear infinite;
+}
+
+/* Scrolling text style */
+.scroll-text {
+  display: inline-block;
+  font-size: 225px;
+  font-weight: bold;
+  color: aliceblue;
+  padding-right: 2rem;
+}
+
+/* Animation keyframes for scrolling effect */
+@keyframes scroll-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+

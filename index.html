@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<!-- Declares the document as an HTML5 document -->
+<html lang="en">
+<head>
+  <!-- Sets character encoding -->
+  <meta charset="UTF-8" />
+
+  <!-- Ensures proper scaling on different devices -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Title shown in browser tab -->
+  <title>Aditya Sinha | ML Enthusiast</title>
+
+  <!-- External CSS file for styling -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Preconnect hints to optimize loading Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Google Fonts: Roboto Slab (Variable Weight) -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet" />
+
+  <!-- Typed.js library for typing animation effect -->
+  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+</head>
+
+<body class="main">
+  <!-- Root container -->
+  <div class="root">
+
+    <!-- Navigation Bar -->
+    <nav class="navBar">
+      <!-- Website Title with dynamic typing effect -->
+      <h3 class="navTitle">
+        <span class="auto-type"></span> <!-- Placeholder for Typed.js animation text -->
+
+        <!-- Optional decorative line (commented out) -->
+        <!--
+        <span
+          style="
+            display: inline-block;
+            width: 30px;
+            height: 2px;
+            background-color: aliceblue;
+            vertical-align: middle;
+            margin-left: 5px;
+          "
+        ></span>
+        -->
+      </h3>
+
+      <!-- Hamburger icon -->
+      <div class="hamburger" id="hamburger">
+        &#9776; <!-- Unicode for hamburger icon -->
+      </div>
+
+      <!-- Navigation Links -->
+      <ul class="navLinks" id="navLinks">
+        <li><a href="#">Resume</a></li> <!-- Placeholder for resume -->
+        <li>
+          <a href="https://www.linkedin.com/in/adityasinha2006/" target="_blank" rel="noopener noreferrer">
+            LinkedIn
+          </a>
+        </li> <!-- External link to LinkedIn -->
+        <li><a href="#">About</a></li> <!-- Placeholder for About page -->
+        <li><a href="#">Contact</a></li> <!-- Placeholder for Contact page -->
+      </ul>
+    </nav>
+
+    <!-- Scrolling text banner -->
+    <div class="scroll-container">
+      <div class="scroll-text-wrapper">
+        <!-- Repeated scroll text for looping animation -->
+        <div class="scroll-text">ADITYA आदित्य ಆದಿತ್ಯ アディティヤ</div>
+        <div class="scroll-text">ADITYA आदित्य ಆದಿತ್ಯ アディティヤ</div>
+      </div>
+    </div>
+
+  </div> <!-- End of root div -->
+
+  <!-- Typed.js Initialization Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      new Typed(".auto-type", {
+        strings: [
+          "<i>I'm a Machine Learning Enthusiast</i>",
+          "<i>I'm an Aspiring Developer</i>",
+          "<i>I am Aditya Sinha</i>"
+        ],
+        typeSpeed: 50,       // Typing speed in milliseconds
+        backSpeed: 50,       // Backspacing speed
+        loop: true           // Loops the animation
+      });
+
+      // Toggle mobile menu
+    const hamburger = document.getElementById("hamburger");
+    const navLinks = document.getElementById("navLinks");
+
+    hamburger.addEventListener("click", () => {
+      navLinks.classList.toggle("show");
+    });
+    });
+  </script>
+
+</body>
+</html>
