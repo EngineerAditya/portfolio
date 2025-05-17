@@ -1,17 +1,26 @@
 /* -------------------------------------
    GLOBAL MAIN STYLES
 ------------------------------------- */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 .main {
   width: 100%;
   height: 100%;
   background: #000000;
 
-  /* CSS Variables for grid lines */
   --gap: 5em;
   --line: 1px;
   --color: rgba(255, 255, 255, 0.2);
 
-  /* Grid background using linear gradients */
   background-image: 
     linear-gradient(
       -90deg,
@@ -26,17 +35,15 @@
       var(--color) var(--gap)
     );
 
-  /* Set background grid spacing */
   background-size: var(--gap) var(--gap);
 }
-
 
 /* -------------------------------------
    NAVIGATION BAR STYLES
 ------------------------------------- */
 .navBar {
   display: flex;
-  align-items: center; /* Fix: changed from 'flex-centre' to 'center' */
+  align-items: center;
   justify-content: space-between;
   padding: 10px;
   font-family: "Roboto Slab", serif;
@@ -48,7 +55,6 @@
   margin: 0;
 }
 
-/* Navigation links container */
 .navLinks {
   list-style-type: none;
   margin: 0;
@@ -58,14 +64,12 @@
   justify-content: flex-end;
 }
 
-/* Individual navigation items */
 .navLinks li {
   display: inline;
   margin-left: 20px;
   font-size: 17px;
 }
 
-/* Navigation anchor styling */
 .navLinks a {
   text-decoration: none;
   color: rgb(83, 82, 79);
@@ -76,7 +80,6 @@
   color: aliceblue;
 }
 
-/* Hamburger icon style */
 .hamburger {
   display: none;
   font-size: 30px;
@@ -84,14 +87,25 @@
   cursor: pointer;
 }
 
-/* Mobile view */
+/* -------------------------------------
+   RESPONSIVE (MOBILE VIEW)
+------------------------------------- */
 @media (max-width: 768px) {
+  .navBar {
+    flex-wrap: wrap;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
   .navLinks {
-    display: none; /* Hide nav links */
+    display: none;
     flex-direction: column;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
     position: absolute;
-    top: 60px; /* below navbar */
+    top: 60px;
     right: 10px;
     width: 150px;
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -103,42 +117,30 @@
     margin: 10px 0;
   }
 
-  .hamburger {
-    display: block; /* Show hamburger icon */
-  }
-
-  .navBar {
-    flex-wrap: wrap;
-  }
-
   .navLinks.show {
-    display: flex; /* Show menu when toggled */
+    display: flex;
   }
 }
-
-
 
 /* -------------------------------------
    SCROLLING TEXT BANNER STYLES
 ------------------------------------- */
 .scroll-container {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: start;
   overflow: hidden;
   white-space: nowrap;
-  transform: translateY(-50%);
+  position: relative;
 }
 
-/* Wrapper for continuous scrolling */
 .scroll-text-wrapper {
   display: inline-block;
   white-space: nowrap;
   animation: scroll-left 20s linear infinite;
 }
 
-/* Scrolling text style */
 .scroll-text {
   display: inline-block;
   font-size: 225px;
@@ -147,7 +149,6 @@
   padding-right: 2rem;
 }
 
-/* Animation keyframes for scrolling effect */
 @keyframes scroll-left {
   from {
     transform: translateX(0);
@@ -157,3 +158,141 @@
   }
 }
 
+/* -------------------------------------
+   CONTACT SECTION STYLES
+------------------------------------- */
+.contact {
+  color: aliceblue;
+  padding: 2em;
+  background-color: rgba(255, 255, 255, 0.05);
+  text-align: center;
+  display: flex;
+  justify-content: center;  /* horizontal centering */
+  align-items: center;      /* vertical centering */
+  flex-direction: row;
+  gap: 2em;                 /* space between text and icons */
+  flex-wrap: wrap;          /* responsive wrapping */
+}
+
+/* -------------------------------------
+   CONTACT INFO TEXT
+------------------------------------- */
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.contactInfo a {
+  text-decoration: none;
+  color: rgb(83, 82, 79);
+  margin: 5px 0;
+  transition: color 0.3s ease;
+}
+
+.contactInfo a:hover {
+  color: aliceblue;
+}
+
+/* -------------------------------------
+   CONTACT ICON STYLES (Uiverse.io)
+------------------------------------- */
+.contact-icons {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  gap: 12px;
+}
+
+.icon-content {
+  position: relative;
+}
+
+.icon-content .tooltip {
+  position: absolute;
+  top: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 5px;
+  opacity: 0;
+  visibility: hidden;
+  font-size: 14px;
+  background-color: rgba(0, 0, 0, 0.75);
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.icon-content:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+  top: -50px;
+}
+
+.icon-content a {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  color: #4d4d4d;
+  background-color: #fff;
+  transition: all 0.3s ease-in-out;
+}
+
+.icon-content a:hover {
+  box-shadow: 3px 2px 45px 0px rgb(0 0 0 / 12%);
+  color: white;
+}
+
+.icon-content a svg {
+  position: relative;
+  z-index: 1;
+  width: 20px;
+  height: 20px;
+}
+
+.icon-content a .filled {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: #000;
+  transition: all 0.3s ease-in-out;
+}
+
+.icon-content a:hover .filled {
+  height: 100%;
+}
+
+.icon-content a[data-social="linkedin"] .filled,
+.icon-content a[data-social="linkedin"] ~ .tooltip {
+  background-color: #0274b3;
+}
+
+.icon-content a[data-social="github"] .filled,
+.icon-content a[data-social="github"] ~ .tooltip {
+  background-color: #24262a;
+}
+
+.icon-content a[data-social="instagram"] .filled,
+.icon-content a[data-social="instagram"] ~ .tooltip {
+  background: linear-gradient(
+    45deg,
+    #405de6,
+    #5b51db,
+    #b33ab4,
+    #c135b4,
+    #e1306c,
+    #fd1f1f
+  );
+}
