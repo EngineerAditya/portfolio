@@ -162,21 +162,27 @@ html, body {
    CONTACT SECTION STYLES
 ------------------------------------- */
 .contact {
-  color: aliceblue;
-  padding: 2em;
-  background-color: rgba(255, 255, 255, 0.05);
+  width: 75vw;
+  max-width: 1100px;
+  min-width: 320px;
+  margin: 3em auto 2em auto;
+  padding: 2.5em 3em 2em 3em;
+  background: rgba(255, 255, 255, 0.07); /* Match About section */
+  border-radius: 22px;
+  box-shadow: 0 8px 40px 0 rgba(0,0,0,0.22);
+  color: #f0f0f0;
+  font-family: "Roboto Slab", serif;
   text-align: center;
-  display: flex;
-  justify-content: center;  /* horizontal centering */
-  align-items: center;      /* vertical centering */
-  flex-direction: row;
-  gap: 2em;                 /* space between text and icons */
-  flex-wrap: wrap;          /* responsive wrapping */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1.5px solid rgba(255,255,255,0.13); /* Match About section */
+  transition: box-shadow 0.3s;
 }
 
-/* -------------------------------------
-   CONTACT INFO TEXT
-------------------------------------- */
+.contact:hover {
+  box-shadow: 0 12px 60px 0 rgba(0,0,0,0.32);
+}
+
 .contactInfo {
   display: flex;
   flex-direction: column;
@@ -295,4 +301,64 @@ html, body {
     #e1306c,
     #fd1f1f
   );
+}
+
+/* -------------------------------------
+   ABOUT SECTION STYLES
+------------------------------------- */
+.about-section {
+  width: 75vw;
+  max-width: 1100px;
+  min-width: 320px;
+  margin: 3em auto 2em auto;
+  padding: 2.5em 3em 2em 3em;
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 18px;
+  box-shadow: 0 4px 32px 0 rgba(0,0,0,0.18);
+  color: #f0f0f0;
+  font-family: "Roboto Slab", serif;
+  text-align: left;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1.5px solid rgba(255,255,255,0.13);
+  transition: box-shadow 0.3s;
+}
+
+.about-section h2 {
+  color: #fff;
+  font-size: 2.2em;
+  margin-bottom: 0.5em;
+  letter-spacing: 1px;
+}
+
+.about-section p {
+  font-size: 1.15em;
+  line-height: 1.7;
+  margin-bottom: 1em;
+  color: #e0e0e0;
+}
+
+.about-section ul {
+  padding-left: 1.2em;
+  margin: 0;
+}
+
+.about-section li {
+  font-size: 1em;
+  margin-bottom: 0.5em;
+  color: #d0d0d0;
+}
+
+/* Responsive for mobile */
+@media (max-width: 768px) {
+  .about-section {
+    padding: 1.2em 0.8em;
+    font-size: 0.98em;
+  }
+  .about-section h2 {
+    font-size: 1.8em;
+  }
+  .about-section p {
+    font-size: 1em;
+  }
 }
