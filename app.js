@@ -1,14 +1,25 @@
-document.addEventListener("DOMContentLoaded", function () {
-  new Typed(".auto-type", {
-    strings: [
-      "<i>I'm a Machine Learning Enthusiast</i>",
-      "<i>I'm an Aspiring Developer</i>",
-      "<i>I am Aditya Sinha</i>"
-    ],
-    typeSpeed: 50,
-    backSpeed: 50,
-    loop: true
-  });
+const typed = new Typed(".auto-type", {
+  strings: [
+    "Aspiring AI Engineer.",
+    "Aspiring Machine Learning Engineer.",
+    "Building Projects with Computer Vision.",
+    "Exploring Data Science.",
+    "Learning Deep Learning.",
+    "Solving Real Problems with AI."
+  ],
+  typeSpeed: 45,
+  backSpeed: 30,
+  backDelay: 1500,
+  startDelay: 300,
+  smartBackspace: true,
+  loop: true,
+  showCursor: true,
+  cursorChar: '|',
+});
+
+
+
+
 
   // Toggle mobile menu
   const hamburger = document.getElementById("hamburger");
@@ -17,4 +28,3 @@ document.addEventListener("DOMContentLoaded", function () {
   hamburger.addEventListener("click", () => {
     navLinks.classList.toggle("show");
   });
-});
