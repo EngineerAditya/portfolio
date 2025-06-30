@@ -439,6 +439,7 @@ html, body {
   font-size: 1em;
   transition: color 0.2s;
   pointer-events: auto;
+  margin-bottom: 5px;
 }
 
 .project-link:hover {
